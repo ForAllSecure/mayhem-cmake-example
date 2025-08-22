@@ -1,0 +1,23 @@
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# example test targets (source names are illustrative)
+add_executable(test_calculator test_calculator.cc)
+target_link_libraries(test_calculator PRIVATE calculator)
+add_test(NAME test_calculator COMMAND test_calculator)
+
+add_executable(gtest_calculator gtest_calculator.cc)
+target_link_libraries(gtest_calculator PRIVATE calculator GTest::gtest_main)
+add_test(NAME gtest_calculator COMMAND gtest_calculator)
+
+add_executable(combined_test_calculator combined_test_calculator.cc)
+target_link_libraries(combined_test_calculator PRIVATE calculator GTest::gtest_main)
+add_test(NAME combined_test_calculator COMMAND combined_test_calculator)
+
+add_executable(harness_utils_test_calculator harness_utils_test_calculator.cc)
+target_link_libraries(harness_utils_test_calculator PRIVATE calculator harness_utils GTest::gtest_main)
+add_test(NAME harness_utils_test_calculator COMMAND harness_utils_test_calculator)
+
+add_executable(fuzzing_utils_test_calculator fuzzing_utils_test_calculator.cc)
+target_link_libraries(fuzzing_utils_test_calculator PRIVATE calculator fuzzing_utils GTest::gtest_main)
+add_test(NAME fuzzing_utils_test_calculator COMMAND fuzzing_utils_test_calculator)

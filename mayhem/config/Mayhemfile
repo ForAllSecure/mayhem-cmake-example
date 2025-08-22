@@ -1,0 +1,12 @@
+project: mayhem-cmake-example
+
+# Target name (should be unique within the project)
+target: fuzz-calculator
+
+# Base image to run the binary in.
+image: ghcr.io/<YOUR_ORG>/mayhem-cmake-example
+
+# List of commands used to test the target
+cmds:
+  - cmd: /fuzz_calculator
+
