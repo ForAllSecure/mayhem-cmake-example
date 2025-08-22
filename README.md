@@ -3,7 +3,7 @@
 ## To build calculator target
 
 ```bash
- cmake -S . -B build
+cmake -S . -B build
 cmake --build build --target calculator_app
 ```
 
