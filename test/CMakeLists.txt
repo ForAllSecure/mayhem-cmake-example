@@ -1,7 +1,6 @@
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-# example test targets (source names are illustrative)
 add_executable(test_calculator test_calculator.cc)
 target_link_libraries(test_calculator PRIVATE calculator)
 add_test(NAME test_calculator COMMAND test_calculator)
