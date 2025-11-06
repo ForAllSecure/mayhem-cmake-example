@@ -17,7 +17,7 @@ int main(int argc, char* args[]) { \
 	if (file.len < 2) { \
 	    return 1; \
         } \
-	size_t harness_index = file.contents[0] % ARRAY_LEN(harnesses); \
+	size_t harness_index = file.contents[0] % (sizeof(harnesses) / sizeof((harnesses)[0])); \
         return harnesses[harness_index](file.contents + 1, file.len - 1); \
     } \
     return RUN_ALL_TESTS(); \
